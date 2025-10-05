@@ -44,7 +44,6 @@ Affordable housing is one of NYC’s most urgent problems. Housing Connect is th
 - Descriptive statistics
 
   - Calculate proportions of units by affordability level in each borough.
-
   - Compare those proportions to borough-level median rents and rent burden rates.
 
 
