@@ -10,7 +10,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Part 1: Brainstorm
 
-### Idea 1
+### Idea 1 (Valeria)
 
 **How does the distribution of affordable Housing Connect units by income eligibility level vary across NYC boroughs, and how does this compare to borough-level rent burden and median rents?**
 
@@ -53,11 +53,11 @@ This project will produce a borough-level analysis of how Housing Connect afford
 
 
 
-### Idea 2
+### Idea 2 (Sarvi)
 
 **Question:**
 
 
-### Idea 3
+### Idea 3 (Luna)
 
 **Question:**
