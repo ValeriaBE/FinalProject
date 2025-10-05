@@ -12,7 +12,45 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ### Idea 1
 
-**Question:**
+**How does the distribution of affordable Housing Connect units by income eligibility level vary across NYC boroughs, and how does this compare to borough-level rent burden and median rents?**
+
+Affordable housing is one of NYC’s most urgent problems. Housing Connect is the city’s lottery-based affordable housing program and a central strategy to address this issue. While Housing Connect produces units targeted at different income brackets (extremely low-income to middle-income), these units may not correspond to the rent affordability needs of borough residents. Comparing the distribution of affordability levels across boroughs alongside rent burden rates will help assess whether Housing Connect developments are addressing local housing needs.
+
+**Potential Datasets:**
+
+* [Affordable Housing Production by Building (HPD)](https://data.cityofnewyork.us/Housing-Development/Affordable-Housing-Production-by-Building/hg8x-zxpr/about_data)
+
+  Number of units in each affordability category (Extremely Low Income, Very Low Income, Low Income, Moderate Income, Middle Income, Other).
+  Borough location of each building.
+
+* [American Community Survey (via tidycensus)](https://walker-data.com/tidycensus/)
+
+  Borough-level median rent, household income, and rent burden rates.
+
+* [NYC Department of Homeless Services (DHS)](https://data.cityofnewyork.us/Social-Services/Individual-Census-by-Borough-Community-District-an/veav-vj3r/about_data)
+
+  Homelessness data by borough to connect housing affordability to broader housing needs.
+
+* [Local Law 44 — Rent Affordability (HPD)](https://data.cityofnewyork.us/Housing-Development/Local-Law-44-Rent-Affordability/93d2-wh7s/about_data)
+
+  Additional rent affordability categories by building.
+  
+**Analysis Plan:**
+
+1. Aggregate data by borough
+
+  - Count total Housing Connect units in each affordability category for each borough.
+
+2. Descriptive statistics
+
+  - Calculate proportions of units by affordability level in each borough.
+
+  - Compare those proportions to borough-level median rents and rent burden rates.
+
+
+This project will produce a borough-level analysis of how Housing Connect affordable housing units are distributed by income eligibility level, and whether they align with borough-specific rent burdens and housing needs. The results can help policymakers target affordable housing production more effectively.
+
+
 
 
 ### Idea 2
