@@ -37,11 +37,11 @@ Affordable housing is one of NYC’s most urgent problems. Housing Connect is th
   
 **Analysis Plan:**
 
-1. Aggregate data by borough
+- Aggregate data by borough
 
   - Count total Housing Connect units in each affordability category for each borough.
 
-2. Descriptive statistics
+- Descriptive statistics
 
   - Calculate proportions of units by affordability level in each borough.
 
