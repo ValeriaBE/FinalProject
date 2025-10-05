@@ -1,0 +1,25 @@
+---
+title: "Final Project"
+output: pdf_document
+date: "2025-10-05"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Part 1: Brainstorm
+
+### Idea 1
+
+**Question:**
+
+
+### Idea 2
+
+**Question:**
+
+
+### Idea 3
+
+**Question:**
