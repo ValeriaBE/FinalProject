@@ -55,6 +55,10 @@ This project will produce a borough-level analysis of how Housing Connect afford
 ### Idea 2 (Sarvi)
 
 **Question:**
+For the final project, my proposed research question would be: Do individuals experiencing greater economic insecurity show more support for tariffs and trade protection? I am currently taking a SIPA class on International Political Economy, and in class, we are covering protectionism and reciprocal tariffs. I would be interested in seeing how economic anxiety contributes to support for protectionism, if at all. I think this is a particularly relevant topic in today's current political climate, as Trump pushes a protectionist trade agenda. 
+
+**Potential Datasets:**
+- Cooperative Election Study (CES 2020/Harvard Dataverse).
 
 
 ### Idea 3 (Luna)
