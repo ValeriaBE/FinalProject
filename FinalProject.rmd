@@ -15,6 +15,7 @@ knitr::opts_chunk$set(echo = TRUE)
 **How does the distribution of affordable Housing Connect units by income eligibility level vary across NYC boroughs, and how does this compare to borough-level rent burden and median rents?**
 
 Affordable housing is one of NYC’s most urgent problems. Housing Connect is the city’s lottery-based affordable housing program and a central strategy to address this issue. While Housing Connect produces units targeted at different income brackets (extremely low-income to middle-income), these units may not correspond to the rent affordability needs of borough residents. Comparing the distribution of affordability levels across boroughs alongside rent burden rates will help assess whether Housing Connect developments are addressing local housing needs.
+Sarvi also worked in Affordable Housing (underwriting credit loans for affordable housing projects from New York to Florida) and has seen first-hand how central of an issue affordable housing is within cosmopolitan cities especially. The waitlists for affordable housing units within New York City especially span thousands of people. 
 
 **Potential Datasets:**
 
