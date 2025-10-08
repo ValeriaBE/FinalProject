@@ -75,6 +75,9 @@ ANES (American National Election Studies) 2016 / 2020: a survey series that trac
 For the final project, another idea for a research question would be how gender identity influences how voters see the competency of potential candidates. 
 Gender has been at the forefront of the latest Presidential election--between Kamala Harris and Donald Trump--as well as in 2008 and 2016, when Hillary Clinton was running for President. It would be interesting to investigate how the competence of female candidates is perceived within the voter base. 
 This question is also important as more openly LGBTQ+ candidates run for office, there is an interesting intersection between gender identity and political ideology and voting behavior that warrants further research. 
+
+Potential analysis could include a regression table--which would show perceived competence by gender identity. Also a word cloud could be created to see media descriptors about gender identity. We could collect media articles that mention political leaders of various gender identies and use sentiment analysis to figure out how certain adjectives that allude to competence differ by gender identity. 
+
 ### Idea 3 (Luna)
 
 **Question:**
