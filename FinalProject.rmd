@@ -69,7 +69,11 @@ Additionally, we could utilize ggplot2 to visualize predicted probabilities of t
 
 ANES (American National Election Studies) 2016 / 2020: a survey series that tracks political attitudes and behaviors. This data would provide insight onto how Americans perceive globalization and trade, and also their policy preferences Here, we can see whether economic insecurity and trade attitudes move together over time or vary by partisanship. 
 
-
+## Idea 3
+** Question ** How does gender identity influence perceptions of political leadership competence?
+For the final project, another idea for a research question would be how gender identity influences how voters see the competency of potential candidates. 
+Gender has been at the forefront of the latest Presidential election--between Kamala Harris and Donald Trump--as well as in 2008 and 2016, when Hillary Clinton was running for President. It would be interesting to investigate how the competence of female candidates is perceived within the voter base. 
+This question is also important as more openly LGBTQ+ candidates run for office, there is an interesting intersection between gender identity and political ideology and voting behavior that warrants further research. 
 ### Idea 3 (Luna)
 
 **Question:**
