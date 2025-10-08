@@ -10,7 +10,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Part 1: Brainstorm
 
-### Idea 1 (Valeria)
+### Idea 1
 
 **How does the distribution of affordable Housing Connect units by income eligibility level vary across NYC boroughs, and how does this compare to borough-level rent burden and median rents?**
 
@@ -39,21 +39,16 @@ Sarvi also worked in Affordable Housing (underwriting credit loans for affordabl
 **Analysis Plan:**
 
 - Aggregate data by borough
-
   - Count total Housing Connect units in each affordability category for each borough.
-
 - Descriptive statistics
-
   - Calculate proportions of units by affordability level in each borough.
   - Compare those proportions to borough-level median rents and rent burden rates.
-
 
 This project will produce a borough-level analysis of how Housing Connect affordable housing units are distributed by income eligibility level, and whether they align with borough-specific rent burdens and housing needs. The results can help policymakers target affordable housing production more effectively.
 
 
 
-
-### Idea 2 (Sarvi)
+### Idea 2 
 
 **Question:**
 For the final project, my proposed research question would be: Do individuals experiencing greater economic insecurity show more support for tariffs and trade protection? 
@@ -70,14 +65,41 @@ Additionally, we could utilize ggplot2 to visualize predicted probabilities of t
 
 ANES (American National Election Studies) 2016 / 2020: a survey series that tracks political attitudes and behaviors. This data would provide insight onto how Americans perceive globalization and trade, and also their policy preferences Here, we can see whether economic insecurity and trade attitudes move together over time or vary by partisanship. 
 
-## Idea 3
-** Question ** How does gender identity influence perceptions of political leadership competence?
+
+
+### Idea 3
+
+**Question: How does gender identity influence perceptions of political leadership competence?** 
+
 For the final project, another idea for a research question would be how gender identity influences how voters see the competency of potential candidates. 
 Gender has been at the forefront of the latest Presidential election--between Kamala Harris and Donald Trump--as well as in 2008 and 2016, when Hillary Clinton was running for President. It would be interesting to investigate how the competence of female candidates is perceived within the voter base. 
 This question is also important as more openly LGBTQ+ candidates run for office, there is an interesting intersection between gender identity and political ideology and voting behavior that warrants further research. 
 
-Potential analysis could include a regression table--which would show perceived competence by gender identity. Also a word cloud could be created to see media descriptors about gender identity. We could collect media articles that mention political leaders of various gender identies and use sentiment analysis to figure out how certain adjectives that allude to competence differ by gender identity. 
+Potential analysis could include a regression table--which would show perceived competence by gender identity. Also a word cloud could be created to see media descriptors about gender identity. We could collect media articles that mention political leaders of various gender identities and use sentiment analysis to figure out how certain adjectives that allude to competence differ by gender identity. 
 
-### Idea 3 (Luna)
+**Potential Datasets:**
+
+- [AP-NORC VoteCast](https://apnorc.org/projects/ap-votecast/): To analyze voter perceptions of political candidates’ competence, and how those perceptions vary by gender identity, ideology, and demographics.
+  - Respondent demographics: gender identity, age, education, income, race, ideology, party identification.
+  - Perception questions: evaluations of candidates’ competence, honesty, empathy, leadership ability, etc.
+  - Candidate-level data: which candidate each respondent voted for or favored (e.g., Kamala Harris, Donald Trump).
+  - Behavioral data: turnout, vote choice, issue priorities.
+
+- [Media Cloud Explorer](https://www.mediacloud.org/): To study how media coverage frames the competence of political leaders with different gender identities. We can extract and visualize adjectives/descriptors linked to candidates and create word clouds showing how competence-related terms differ by gender identity.
+  - News articles from major outlets mentioning key political figures 
+  - Article metadata: publication date, source, country, topic.
+  - Full text of articles (for text analysis).
+
+- [Census Data](https://walker-data.com/tidycensus/): To provide demographic context for understanding regional variation in perceptions of leadership competence.
+  - Population-level statistics by state, county, metro area:
+    - Gender composition
+    - Education levels
+    - Income
+    - Political participation proxies
+    - Age distribution
+  - These can be merged with the geographic identifiers in VoteCast
+
+
+### Idea 4
 
 **Question:**
