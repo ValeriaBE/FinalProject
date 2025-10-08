@@ -55,10 +55,19 @@ This project will produce a borough-level analysis of how Housing Connect afford
 ### Idea 2 (Sarvi)
 
 **Question:**
-For the final project, my proposed research question would be: Do individuals experiencing greater economic insecurity show more support for tariffs and trade protection? I am currently taking a SIPA class on International Political Economy, and in class, we are covering protectionism and reciprocal tariffs. I would be interested in seeing how economic anxiety contributes to support for protectionism, if at all. I think this is a particularly relevant topic in today's current political climate, as Trump pushes a protectionist trade agenda. 
+For the final project, my proposed research question would be: Do individuals experiencing greater economic insecurity show more support for tariffs and trade protection? 
+I am currently taking a SIPA class on International Political Economy, and in class, we are covering protectionism and reciprocal tariffs. I would be interested in seeing how economic anxiety contributes to support for protectionism, if at all. I think this is a particularly relevant topic in today's current political climate, as Trump pushes a protectionist trade agenda. 
+Analysis here would involve using regression models (logistic if dependent variable is binary or an OLS regression if it's a continuous scale). The study will estimate the relationship between perceived job risk and support for trade protectionism. We could also use descriptive statistics such as a histogram to show trade attitude differences across income categories.  
+Additionally, we could utilize ggplot2 to visualize predicted probabilities of tariff support by economic security at party ID. 
 
 **Potential Datasets:**
-- Cooperative Election Study (CES 2020/Harvard Dataverse).
+- CES (Cooperative Election Study) 2020: its a survey that is a representative sample of U.S. adults. This survey covers demographics, partisanship, issue positions, and policy preferences--discussing several economic and trade-related questions. 
+
+- ACS 2020: looks at county-level unemployment and median income. Here, we could test whether respondents in more trade-exposed areas support protectionist policies more.
+
+- MIT Election Lab: looks at county-level election results. Here, we study how protectionism correlates with local Trump/Biden support. 
+
+ANES (American National Election Studies) 2016 / 2020: a survey series that tracks political attitudes and behaviors. This data would provide insight onto how Americans perceive globalization and trade, and also their policy preferences Here, we can see whether economic insecurity and trade attitudes move together over time or vary by partisanship. 
 
 
 ### Idea 3 (Luna)
