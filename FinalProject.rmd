@@ -100,6 +100,43 @@ Potential analysis could include a regression table--which would show perceived 
   - These can be merged with the geographic identifiers in VoteCast
 
 
-### Idea 4
+### Idea 4: Using the V-Dem Dataset: democracy dynamics
 
-**Question:**
+I am a political science student, and have used Rstudio in the past to study democracy dynamics in the world. I have come up with multiple questions, using variables in the V-dem dataset, that are interesting in the current political landscape.
+
+As the V-dem dataset encompasses all countries of the world, the following questions could be adapted to a global context/or a specific case analysis (democracies of the world, USA, autocracies of the world, the EU...etc). 
+
+**Question 4.1:** Are education levels linked to greater media freedom?
+
+
+I would expect higher education levels to be linked to greater media freedom because educated populations are more likely to value information, seek transparency, and hold governments accountable. In societies where people are literate and informed, there tends to be more pressure on authorities to allow diverse viewpoints and independent reporting. This question is relevant because understanding this link can highlight how investments in education may indirectly support press freedom, which is essential for democracy, accountability, and civic engagement.
+Can data explain this?
+
+**Question 4.2:** Does media freedom lead to better social outcomes (e.g. health, education)?
+
+I would expect media freedom to improve social outcomes because a free press can expose mismanagement, inform citizens about health and education policies, and encourage governments to respond to public needs. When media can operate independently, it helps ensure that social programs are more effective and accessible. This question is relevant because it shows that protecting press freedom is not only a democratic goal but can also have direct, tangible benefits for people’s wellbeing, making it a key factor in development and policy planning.
+
+
+
+and here come my favorite ones..:
+
+**Question 4.3:** Does higher women’s political representation contribute to stronger democracy and lower levels of political conflict?”
+
+I have seen some time ago, that women in power are correlated with less conflicts overall. Women in power tend to focus more on social protection, and less on war. Is this true? Can data prove this?
+
+
+**Question 4.4:** Does higher women’s political representation contribute to lower levels of corruption?
+
+Studies of close elections in Brazil indicate that women elected as Brazilian mayors are 29-35% less likely to engage in corruption
+-	They also use clientelism less, resulting in approximately 64 fewer temporary employees
+-	women mayors contribute to a 1 percentage point reduction in premature births.
+-	In Africa, female leaders have been shown to empower women to use social accountability
+
+What about in other parts of the world? Is this a real recurrent dynamic? or simply a "coincidence"?
+
+
+
+**Potential Datasets**
+https://v-dem.net/data/the-v-dem-dataset/ A very comprehensive dataset, includes data on every single country of the world on democracy dynamics
+
+
