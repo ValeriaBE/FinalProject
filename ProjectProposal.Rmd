@@ -1,0 +1,160 @@
+---
+title: "ProjectProposal"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+## Central Research Question
+
+**How does gender identity influence perceptions of political leadership competence in U.S. elections?**
+
+## Hypotheses
+
+### Primary Hypothesis
+
+Voters perceive **female and gender-minority candidates** as **less competent** than **male candidates**.
+
+- **Controls:** partisanship, ideology, demographic factors (e.g., age, education, race).
+
+### Secondary Hypothesis
+
+Media coverage strengthens gender-based perception gaps by:
+
+- Associating **female and non-binary candidates** with **fewer competence-related descriptors**
+- Emphasizing **traits linked to sensitivity and emotion**
+
+
+## Reasoning
+
+Perceived competence is a critical determinant of electoral success. Existing research suggests persistent gendered expectations in politics, yet gaps remain in understanding:
+
+- Whether gender-based competence perceptions vary across **regional cultural contexts**
+- The extent to which these patterns persist after accounting for **partisan sorting**, especially given that recent prominent female candidates (e.g. Harris) have been Democrats
+
+Addressing these questions sheds light on how gender bias and media narratives continue to shape electoral opportunities and political representation for women and gender-minority candidates in the U.S.
+
+## Data Selection and Preparation
+
+We selected two datasets: one capturing **voter perceptions** and the other capturing **media framing**.
+
+
+### Dataset 1: AP-NORC VoteCast (2024)
+
+**Source:** <https://apnorc.org/projects/ap-votecast/>  
+**Purpose:** Analyze voter perceptions of candidate competence and assess whether perceptions differ by gender identity, controlling for partisanship and demographics.  
+**Unit of Analysis:** Individual voters  
+
+**Relevant Variables**
+- Voter gender identity (male, female, non-binary)
+- Perceived candidate competence
+- Vote choice
+- Party identification & political ideology
+- Demographics: age, education, income, race
+
+**Planned Cleaning**
+- Recode gender identity into consistent categories:  
+  *Male / Female / Gender-minority*
+- Construct competence measures from VoteCast leadership & capability trait items
+- Validate consistency of competence scales across different candidates
+
+**Anticipated Challenges**
+- Small sample size for gender-minority respondents
+- Cross-candidate comparability of competence measures
+
+
+### Dataset 2: Media Cloud (News Articles)
+
+**Source:** <https://www.mediacloud.org/>  
+**Purpose:** Examine whether media coverage assigns different competence-related traits to candidates based on gender identity.  
+**Unit of Analysis:** Individual news article mentioning major 2024 candidates (e.g., Harris, Trump)
+
+**Relevant Variables**
+- Candidate name
+- News outlet
+- Publication date
+- Article text
+
+**Planned Cleaning**
+- Collect articles mentioning 2024 presidential candidates
+- Text preprocessing 
+- Identify competence-related vs emotion-related frames
+
+**Anticipated Challenges**
+- Distinguishing gender framing from partisan media bias
+- Text modeling complexity
+- Ensuring balanced samples across outlets and regions
+
+
+## Planned Analysis
+
+### VoteCast Analysis
+
+We would estimate voter perceptions of candidate competence as a function of candidate gender identity, controlling for ideology, party ID, and demographic characteristics. Depending on the measurement structure, we would use OLS (continuous competence ratings) or logistic regression (binary competence indicators).
+
+**Model Structure**
+```{r}
+Competence ~ CandidateGender + PartyID + Ideology + Demographics
+```
+
+### Subgroup Analysis
+
+To deepen the analysis, we will conduct subgroup comparisons:
+
+- **Within-party comparisons**
+  - Democrats only  
+  - Republicans only  
+
+- **Cross-cutting cases**
+  - Example: Republicans with favorable views of Democratic candidates  
+  - Purpose: assess whether gender bias persists even when partisanship does not align with vote choice  
+
+These subgroup tests help determine whether gender-based competence perceptions emerge **independent of partisan alignment**.
+
+### Planned Visualizations (VoteCast)
+
+- **Histograms by candidate gender identity**: Shows whether perceptions are different systematically across gender categories even before controlling for ideology or partisanship
+
+- **Scatterplots / Boxplots**: comparing competence perceptions by gender, ideology, and education will help expose potential interactions.
+
+- **Coefficient plots from regression models**: helps summarize sizes of treatment effects and confidence intervals, allowing us to understand which predictors most strongly shape perceptions of competence. 
+
+
+All three visualizations will reveal baseline differences and interaction patterns prior to and after adjusting for political attitudes.
+
+
+### Media Cloud Analysis
+
+We will analyze article text to assess how the media describe candidates of different gender identities.
+
+**Steps**
+
+- Extract articles referencing leading candidates
+- Identify competence-related descriptors vs emotional descriptors
+- Conduct sentiment and keyword frequency analysis
+
+
+**Media Variation**
+
+To address ideological bias in coverage, we will include external ratings of outlet partisanship and compare framing across conservative, centrist and progressive outlets.
+
+**Planned Visualizations**
+
+- Word frequency bar charts 
+- Keyword comparison across outlet categories
+- Word clouds (exploratory/descriptive)
+
+
+
+### Integration Strategy
+
+We will compare: 
+Voter level competence perceptions (VoteCast) 
+Media framing patterns for candidate traits (Media Cloud) 
+To assess whether media bias in competence framing corresponds with voter attitudes and whether partisan media environments condition gender-based competence evaluations. Specifically, we will examine whether candidates who receive fewer competence related descriptors in media are also rated lower on leadership and capability traits by voters, and whether these relationships differ across partisan and ideological contexts. 
+
+
+
+### Why This Approach Is Appropriate
+
+Combining these two datasets permits us to see whether these perceptions arise independently in public attitudes or are reinforced by media framing and whether they vary by political context. 
