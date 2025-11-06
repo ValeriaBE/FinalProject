@@ -13,26 +13,37 @@ output:
 
 ### Primary Hypothesis
 
-Voters perceive **female and gender-minority candidates** as **less competent** than **male candidates**.
-
-- **Controls:** partisanship, ideology, demographic factors (e.g., age, education, race).
+Voters perceive female and gender-minority candidates as less competent than male candidates. For this hypothesis, we would control for the following variables: partisanship, ideology, and experience. However, these biases are stronger in more conservative or rural regions compared to urban or liberal regions. 
 
 ### Secondary Hypothesis
 
-Media coverage strengthens gender-based perception gaps by:
+Media coverage strengthens these perceptions by associating feminine candidates with fewer competence-related descriptors and more qualities that are linked to sensitivity and emotion, while emphasizing strength and experience for male candidates. These framing techniques are more pronounced in right-leaning or rural media markets. 
 
-- Associating **female and non-binary candidates** with **fewer competence-related descriptors**
-- Emphasizing **traits linked to sensitivity and emotion**
+## Expected contribution
 
+The study aims to distinguish whether gender-based competence gaps persist once we control for experience and ideology–and whether these gaps are region-specific. 
 
 ## Reasoning
 
-Perceived competence is a critical determinant of electoral success. Existing research suggests persistent gendered expectations in politics, yet gaps remain in understanding:
+Perceived “competence” is a significant predictor of electoral success. Voters often evaluate competence through gendered norms–where leadership is subconsciously associated with masculinity and experience. Prior studies demonstrate that women are often evaluated as less decisive or qualified, particularly within economic policy or international security. 
+This project will introduce regional cultural variation and media framing as mechanisms shaping these perceptions.
 
-- Whether gender-based competence perceptions vary across **regional cultural contexts**
-- The extent to which these patterns persist after accounting for **partisan sorting**, especially given that recent prominent female candidates (e.g. Harris) have been Democrats
+- Mechanism 1 (norm lens): gender norms differ by region–voters in rural or conservative states may hold stronger traditional expectations of leadership, amplifying gender gaps in perceived competence. 
+- Mechanism 2 (Experience lens): female candidates are often newer entrants into politics.
+- Mechanism 3 (media reinforcement): local news coverage may differ in how they describe male vs. female candidates, strengthening or weakening competence stereotypes.
 
-Addressing these questions sheds light on how gender bias and media narratives continue to shape electoral opportunities and political representation for women and gender-minority candidates in the U.S.
+## Empirical strategy
+
+- Design: cross-sectional quantitative analysis of 2020-2024 Senate races, focusing on four candidates (two Democrats, two Republicans–one female and one male in each party) 
+- Data Sources:
+  - Voter perceptions: AP-NORC VoteCast (2020 and 2024)--includes perceptions of candidate competence, gender, partisanship, ideology, and demographics 
+  - Media coverage: Media Cloud and/or GDELT database for text analysis of media framing (ex: sentiment, use of gendered adjectives). 
+- Analytic Approach: 
+  - Use matching or propensity score weighting to compare candidates who are similar in experience, issue positions, and incumbency, but differ in gender.
+  - Estimate the average treatment effect of gender on perceived competence
+  - Model interaction terms to test whether gender effects vary by region (urban vs rural) and partisanship
+  - For media data, run text-based sentiment analysis and topic modeling to capture differences in competence framing 
+
 
 ## Data Selection and Preparation
 
@@ -42,101 +53,108 @@ We selected two datasets: one capturing **voter perceptions** and the other capt
 ### Dataset 1: AP-NORC VoteCast (2024)
 
 **Source:** <https://apnorc.org/projects/ap-votecast/>  
-**Purpose:** Analyze voter perceptions of candidate competence and assess whether perceptions differ by gender identity, controlling for partisanship and demographics.  
+**Purpose:** To analyze how voter perceptions of political candidates’ competence differ between male and female candidates, controlling for partisanship, ideology, and political experience. 
 **Unit of Analysis:** Individual voters  
 
 **Relevant Variables**
-- Voter gender identity (male, female, non-binary)
-- Perceived candidate competence
+- Perceived candidate competence (leadership, experience, capability)
+- Candidate gender: male or female
 - Vote choice
-- Party identification & political ideology
-- Demographics: age, education, income, race
+- Partisanship and ideology: party identification, ideology score
+- Demographics: age, education, income, race, and region (urban vs. rural indicators)
+- Candidate experience (incumbent status or prior political office, where available)
 
 **Planned Cleaning**
-- Recode gender identity into consistent categories:  
-  *Male / Female / Gender-minority*
-- Construct competence measures from VoteCast leadership & capability trait items
-- Validate consistency of competence scales across different candidates
+- Recode candidate gender into binary categories (male = 0, female = 1)
+- Construct competence indices from VoteCast trait measures related to leadership, strength, experience, and capability
+- Merge 2020 and 2024 Senate race data to expand the sample and enable cross-year comparisons
+- Verify consistent scaling across years and candidates to ensure comparability
 
 **Anticipated Challenges**
-- Small sample size for gender-minority respondents
-- Cross-candidate comparability of competence measures
+- Achieving comparable experience and issue-position data across candidates.
+- Accounting for varying regional identifiers (state vs. county-level).
+- Maintaining sufficient sample size after matching or weighting.
 
 
 ### Dataset 2: Media Cloud (News Articles)
 
 **Source:** <https://www.mediacloud.org/>  
-**Purpose:** Examine whether media coverage assigns different competence-related traits to candidates based on gender identity.  
-**Unit of Analysis:** Individual news article mentioning major 2024 candidates (e.g., Harris, Trump)
+**Purpose:** To examine whether media coverage attributes different competence-related or emotion-related traits to male vs. female candidates, and whether these framing patterns vary across partisan or regional media markets.  
+**Unit of Analysis:** Individual news article mentioning 2020–2024 Senate candidates
 
 **Relevant Variables**
 - Candidate name
-- News outlet
+- News outlet and outlet partisanship (e.g., conservative, centrist, progressive)
 - Publication date
-- Article text
+- Full article text or excerpt
+- Geographic scope of outlet (national vs. regional)
 
 **Planned Cleaning**
-- Collect articles mentioning 2024 presidential candidates
-- Text preprocessing 
-- Identify competence-related vs emotion-related frames
+- Collect articles referencing selected Senate candidates from both major parties (2020 and 2024 cycles)
+- Apply text preprocessing (tokenization, stopword removal, lemmatization)
+- Tag and classify words into competence descriptors (e.g., qualified, experienced, capable) vs emotion descriptors (e.g., empathetic, caring, sensitive)
+- Aggregate article-level data into candidate × outlet × region summaries to compare framing intensity
 
 **Anticipated Challenges**
-- Distinguishing gender framing from partisan media bias
-- Text modeling complexity
-- Ensuring balanced samples across outlets and regions
+- Differentiating gendered framing from partisan slant.
+- Limited full-text access (Media Cloud provides metadata and frequency-level data).
+- Balancing article representation across outlets and regions.
 
 
 ## Planned Analysis
 
+### Analytic Approach
+We will employ a matching and weighting design to isolate the effect of candidate gender on perceived competence.
+- Use propensity score matching (PSM) or propensity score weighting to compare male and female candidates who are similar in experience, issue positions, and incumbency, but differ by gender.
+- Estimate the average treatment effect (ATE) of candidate gender on perceived competence.
+= Incorporate interaction terms to test whether gender effects vary by region (urban vs. rural) and partisanship (liberal vs. conservative respondents).
+- For media data, conduct text-based sentiment analysis and topic modeling to identify differences in competence framing across candidates and outlets.
+
+
 ### VoteCast Analysis
 
-We would estimate voter perceptions of candidate competence as a function of candidate gender identity, controlling for ideology, party ID, and demographic characteristics. Depending on the measurement structure, we would use OLS (continuous competence ratings) or logistic regression (binary competence indicators).
+We will estimate voter perceptions of candidate competence as a function of candidate gender, controlling for ideology, partisanship, experience, and demographics.
 
 **Model Structure**
 ```{r}
-Competence ~ CandidateGender + PartyID + Ideology + Demographics
+Competence ~ CandidateGender + PartyID + Ideology + Experience
 ```
+
+### Design Steps:
+
+- Match or weight observations using propensity scores to balance male and female candidates on experience, incumbency, and issue positions.
+- Estimate the average treatment effect of gender on perceived competence.
+- Include interaction terms to test whether gender effects are moderated by region or ideology.
 
 ### Subgroup Analysis
 
-To deepen the analysis, we will conduct subgroup comparisons:
+- Compare within-party results (Democrats vs. Republicans).
+- Examine whether gender gaps are stronger among conservative or rural respondents.
+- Test whether gender effects persist even when partisanship does not align with vote choice (e.g., Republicans evaluating Democratic women).
 
-- **Within-party comparisons**
-  - Democrats only  
-  - Republicans only  
-
-- **Cross-cutting cases**
-  - Example: Republicans with favorable views of Democratic candidates  
-  - Purpose: assess whether gender bias persists even when partisanship does not align with vote choice  
-
-These subgroup tests help determine whether gender-based competence perceptions emerge **independent of partisan alignment**.
 
 ### Planned Visualizations (VoteCast)
 
-- **Histograms by candidate gender identity**: Shows whether perceptions are different systematically across gender categories even before controlling for ideology or partisanship
+- **Histograms**: comparing competence ratings for male vs. female candidates
 
-- **Scatterplots / Boxplots**: comparing competence perceptions by gender, ideology, and education will help expose potential interactions.
+- **Scatterplots / Boxplots**: showing competence by gender, ideology, and education
 
-- **Coefficient plots from regression models**: helps summarize sizes of treatment effects and confidence intervals, allowing us to understand which predictors most strongly shape perceptions of competence. 
+- **Coefficient plots from regression models**: displaying regression estimates and confidence intervals 
 
-
-All three visualizations will reveal baseline differences and interaction patterns prior to and after adjusting for political attitudes.
+These visualizations will highlight both raw differences and adjusted effects after accounting for ideology and partisanship.
 
 
 ### Media Cloud Analysis
 
-We will analyze article text to assess how the media describe candidates of different gender identities.
+We will analyze article text to assess how media outlets describe male and female candidates, emphasizing competence and emotion-related framing.
 
 **Steps**
 
-- Extract articles referencing leading candidates
-- Identify competence-related descriptors vs emotional descriptors
-- Conduct sentiment and keyword frequency analysis
-
-
-**Media Variation**
-
-To address ideological bias in coverage, we will include external ratings of outlet partisanship and compare framing across conservative, centrist and progressive outlets.
+- Extract and preprocess articles mentioning selected Senate candidates.
+- Identify competence-related vs emotion-related descriptors using a custom dictionary of gendered leadership terms.
+- Conduct sentiment and keyword frequency analyses.
+- Compare framing patterns across outlets classified as conservative, centrist, or progressive.
+- Examine whether regional outlets (e.g., rural vs. urban coverage areas) display different framing tendencies.
 
 **Planned Visualizations**
 
@@ -157,4 +175,7 @@ To assess whether media bias in competence framing corresponds with voter attitu
 
 ### Why This Approach Is Appropriate
 
-Combining these two datasets permits us to see whether these perceptions arise independently in public attitudes or are reinforced by media framing and whether they vary by political context. 
+Combining VoteCast (voter-level attitudes) and Media Cloud (media framing data) allows a multi-layered analysis of how gender influences perceptions of political competence.
+
+By using propensity score matching to control for candidate experience and media text analysis to quantify framing, this design provides both individual-level and contextual evidence.
+It reveals whether gender-based competence gaps persist after accounting for ideology and experience, and whether these gaps are reinforced by regional culture and media tone.
