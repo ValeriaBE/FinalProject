@@ -179,3 +179,7 @@ Combining VoteCast (voter-level attitudes) and Media Cloud (media framing data) 
 
 By using propensity score matching to control for candidate experience and media text analysis to quantify framing, this design provides both individual-level and contextual evidence.
 It reveals whether gender-based competence gaps persist after accounting for ideology and experience, and whether these gaps are reinforced by regional culture and media tone.
+
+
+## Github repo: https://github.com/ValeriaBE/FinalProject
+
