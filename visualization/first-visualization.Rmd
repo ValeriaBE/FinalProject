@@ -83,7 +83,6 @@ hard_terms <- c(
 )
 ```
 
-We’ll treat title as the “text” field and count how many times words from each dictionary appear.
 
 ```{r count}
 normalize_text <- function(x) {
@@ -157,9 +156,11 @@ ggplot(viz_data, aes(x = gender_label, y = pct, fill = frame_simple)) +
   )
 ```
 
-Interpretation:
+Figure 1 visualizes the distribution of issue framing in online news headlines as a function of candidate gender. The key variables are a binary headline classified as “soft” when the headline contains more education, health, or family-related terms, and “hard” when it contains more economy, crime, immigration, or defense-related terms—and a gender indicator based on whether the headline references a female or male political candidate. Before visualization, headline text was cleaned and transformed to lowercase, and a dictionary-based approach was used to count soft and hard keywords in each title; headlines were then labeled according to which category terms appeared more frequently. The resulting dataset was aggregated to compute the proportion of soft and hard framed headlines separately for female and male candidates. A 100% stacked bar chart is appropriate here because the goal is to compare relative shares of soft versus hard framing within gender groups rather than absolute frequencies.
 
-The preliminary visualization shows a clear gender divide in the types of issues linked to candidates in online news headlines. For female candidates, 7.8% of headlines are classified as soft-issue stories, compared to only 1.7% for male candidates. Although hard-issue coverage dominates for both groups, the relative share of soft-issue framing is roughly four to five times higher for women. This pattern supports the first hypothesis that female politicians are more frequently associated with education, healthcare, and family-related themes. Male candidates, by contrast, are even more strongly connected to hard issues such as the economy, immigration, and crime, consistent with the second hypothesis. Because this measure relies solely on headline text—-and not on full article content-—the results should be interpreted cautiously. Nevertheless, the visualization provides initial evidence of gendered issue framing in 2024 political news coverage. 
+This analysis assumes that Media Cloud’s indexed headlines provide an unbiased observational sample of political news coverage and that keyword-based classification on headline text reasonably reflects issue framing, even though the full article content is not analyzed. Because these data are not randomly sampled, and because headlines may not fully represent underlying story themes, results should be interpreted as descriptive patterns rather than causal estimates. Uncertainty primarily arises from measurement error in the dictionary method and potential selection bias in which outlets cover which candidates. The female-candidate headlines include N = 3000 observations, while the male-candidate headlines include N = 2000 observations (table(scored$gender)); these sample sizes are large enough for the proportions to be stable, even without formal confidence intervals.
+
+Figure 1 shows a clear gender divide in the types of issues linked to candidates in online news headlines. For female candidates, 7.8% of headlines are classified as soft-issue stories, compared to only 1.7% for male candidates. Although hard-issue coverage dominates for both groups, the relative share of soft-issue framing is roughly four to five times higher for women. This pattern supports the first hypothesis that female politicians are more frequently associated with education, healthcare, and family-related themes. Male candidates, by contrast, are even more strongly connected to hard issues such as the economy, immigration, and crime, consistent with the second hypothesis. Because this measure relies solely on headline text—-and not on full article content-—the results should be interpreted cautiously. Nevertheless, the visualization provides initial evidence of gendered issue framing in 2024 political news coverage. 
 
 
 ## Next Steps
