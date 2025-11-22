@@ -159,17 +159,7 @@ ggplot(viz_data, aes(x = gender_label, y = pct, fill = frame_simple)) +
 
 Interpretation:
 
-
-
-
-
-
-
-
-
-
-
-
+The preliminary visualization shows a clear gender divide in the types of issues linked to candidates in online news headlines. For female candidates, 7.8% of headlines are classified as soft-issue stories, compared to only 1.7% for male candidates. Although hard-issue coverage dominates for both groups, the relative share of soft-issue framing is roughly four to five times higher for women. This pattern supports the first hypothesis that female politicians are more frequently associated with education, healthcare, and family-related themes. Male candidates, by contrast, are even more strongly connected to hard issues such as the economy, immigration, and crime, consistent with the second hypothesis. Because this measure relies solely on headline text—-and not on full article content-—the results should be interpreted cautiously. Nevertheless, the visualization provides initial evidence of gendered issue framing in 2024 political news coverage. 
 
 
 ## Next Steps
