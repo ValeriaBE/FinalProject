@@ -35,9 +35,9 @@ ggplot(soft_only,
             vjust = -0.3, size = 4) +
   scale_y_continuous(labels = percent,
                      limits = c(0, max(soft_only$pct) * 1.2)) +
-  scale_fill_manual(values = c("F"="#FF9BBF", "M"="#6C8FF5")) +
+  scale_fill_manual(values = c("F"="#FF9BBF", "M"="#FF9BBF")) +
   labs(
-    title = "Among Soft-Issue Headlines, Most Feature Female Candidates",
+    title = "Among Soft-Issue Headlines",
     x = "Gender",
     y = "Share of Soft Headlines"
   ) +
