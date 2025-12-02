@@ -28,13 +28,13 @@ candidates <- tibble::tribble(
   "Ted Cruz",           "R",    "TX",   "M",
   "Rick Scott",         "R",    "FL",   "M",
   "Josh Hawley",        "R",    "MO",   "M",
-  "J.D. Vance",         "R",    "OH",   "M"
+  "Sherrod Brown",      "D",    "OH",   "M"
 )
 # Ran the first set and it errored out for these two candidates, so running them separately
 failed_candidates <- tibble::tribble(
   ~candidate,           ~party, ~state, ~gender,
-  "Katie Britt",        "R",    "AL",   "F",
-  "Rick Scott",         "R",    "FL",   "M"
+  "Ted Cruz",            "R",    "TX",   "M",
+  "Sherrod Brown",       "D",    "OH",   "M"
 )
 
 # ---- 2. Date range ----
@@ -84,13 +84,13 @@ fetch_stories_for_candidate <- function(name, party, state, gender,
 }
 
 # ---- 4. Loop version ----
-
+failed_results <- list()
 all_results <- list()  # empty list to collect candidate tables
 counter <- 1
 
 #just change candidates to failed_candidates to run the failed ones separately
-for (i in 1:nrow(candidates)) {
-  row <- candidates[i, ]
+for (i in 1:nrow(failed_candidates)) {
+  row <- failed_candidates[i, ]
   
   temp <- tryCatch(
     fetch_stories_for_candidate(
@@ -105,18 +105,18 @@ for (i in 1:nrow(candidates)) {
     }
   )
   
-  all_results[[counter]] <- temp
+  failed_results[[counter]] <- temp
   counter <- counter + 1
 }
 
 # Combine all candidate data frames into one big one
 all_stories <- dplyr::bind_rows(all_results)
-
+failed_stories <- dplyr::bind_rows(failed_results)
 #run this when running failed candidates separately
-final_all_stories <- dplyr::bind_rows(all_stories, all_results)
+final_all_stories <- dplyr::bind_rows(all_stories, failed_stories)
 
 
 # ---- 5. Save ----
 dir.create("data_clean", showWarnings = FALSE)
-readr::write_csv(final_all_stories, "data_clean/mediacloud_stories_2024_candidates.csv")
+readr::write_csv(final_all_stories, "data_clean/mediacloud_stories_2024_candidates_new.csv")
 

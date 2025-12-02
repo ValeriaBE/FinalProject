@@ -62,7 +62,7 @@ Because Media Cloud provides metadata only (not full article text), the dataset 
 To construct a preliminary measure of issue framing, We apply a hand-coded dictionary of “soft” (education, health, family, welfare) and “hard” (economy, defense, crime, foreign policy) terms to the headline text of each article. For each story, I count the number of soft-related and hard-related keywords that appear in the title, and classify the story as “soft-framed” when soft terms are more frequent than hard terms, and “hard-framed” otherwise. This approach is conservative and headline-based only; it does not use full article text.
 
 ```{r retrieving stories, include=FALSE}
-stories <- read_csv("../data_clean/mediacloud_stories_2024_candidates.csv")
+stories <- read_csv("../data_clean/mediacloud_stories_2024_candidates_new.csv")
 ```
 
 ```{r soft/hard dictionaries}
