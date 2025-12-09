@@ -37,7 +37,7 @@ Research in political communication has consistently demonstrated that media cov
 
 Empirical studies find that female candidates are often linked to “soft” issues such as education, healthcare, and family policy, even when they hold positions or leadership roles in traditionally “hard” issue areas. For example, several experimental and observational studies show that voters tend to rate women as more competent on social welfare and education but less competent on national security or economic management, regardless of their actual qualifications. Media framing reinforces these public perceptions: women receive more coverage about personal traits and family roles, while men receive more issue-focused and policy-oriented coverage.
 
-More recent work examining digital media suggests that gendered framing persists even as news production shifts to online platforms and social feeds. Analyses using large-scale corpora of online news show that algorithmic amplification can intensify existing representational biases by reproducing the themes most likely to drive engagement—often those that align with stereotype-consistent narratives. 
+More recent work examining digital media suggests that gendered framing persists even as news production shifts to online platforms and social feeds. Analyses using large-scale corpora of online news show that algorithmic amplification can intensify existing representational biases by reproducing the themes most likely to drive engagement—often those that align with stereotype-consistent narratives.
 
 Nevertheless, several limitations remain in the existing literature. Much of the foundational research focuses on earlier election cycles or on a small set of high-profile candidates, leaving open questions about how gendered patterns operate in the contemporary, high-volume online news environment. Few studies examine broad samples of candidates across parties and regions using systematic, reproducible NLP methods applied directly to digital news content. We also know relatively little about whether gender associations with specific policy domains remain stable in 2024.
 
@@ -77,8 +77,21 @@ We also computed aggregate measures such as:
 
 No weights, survey adjustments, or experimental designs were used. The dataset reflects the naturally occurring distribution of online news coverage. Because the data come from an API-driven corpus, the sample is not a probability sample, and results should be interpreted as descriptive patterns in the 2024 online political information environment rather than population-level estimates.
 
-This dataset provides a large, systematic collection of political news headlines during the 2024 cycle, offering an appropriate foundation for examining whether gendered issue framing persists in contemporary online media.
+**Apples-to-Apples Comparison and Remaining Confounders**
 
+The candidate set is designed to approximate an apples-to-apples comparison along several key dimensions: all individuals are U.S. senators or high-profile Senate candidates, all receive sustained national media attention, and all are observed within the same 2024 digital news environment. These features help reduce structural differences in baseline newsworthiness that could otherwise obscure gendered framing patterns.
+
+However, this design does not fully isolate gender. Important potential confounders remain, including:
+
+- Ideology (progressive vs. conservative),
+- Partisan media ecosystems,
+- Candidate rhetorical style and strategic messaging,
+- Issue ownership and policy specialization,
+- News cycles driven by scandals or viral events.
+
+In particular, the male candidate set in this cycle is more heavily Republican, while the women include both Democrats and Republicans. As a result, differences in issue framing may partly reflect party- or ideology-specific agenda setting rather than gender alone. Accordingly, the findings should be interpreted as descriptive differences in media framing associated with gender, not as causal estimates of gender bias.
+
+This dataset provides a large, systematic collection of political news headlines during the 2024 cycle, offering an appropriate foundation for examining whether gendered issue framing persists in contemporary online media.
 
 ## 4. Results
 
@@ -104,6 +117,8 @@ stories <- read_csv("../data_clean/mediacloud_stories_2024_candidates_new.csv")
 ```
 
 ```{r soft/hard dictionaries, echo=FALSE, message=FALSE, warning=FALSE}
+#The soft vs. hard issue dictionaries reflect a standard distinction in the political communication literature between "soft news" (social welfare, education, health, family) and "hard news" (economy, crime, defense, immigration, foreign policy). These domains map onto stereotypically "feminine" and "masculine" issue areas discussed in prior research on gendered media coverage.
+
 soft_terms <- c(
   "education", "school", "schools", "teacher", "teachers",
   "childcare", "children", "families", "family",
@@ -231,6 +246,7 @@ ggplot(candidate_frames,
 **Interpretation:**
 Soft-issue headlines remain uncommon across all candidates, yet the ranking is strongly gendered. Three of the four women (Baldwin, Gillibrand, Britt) show soft-issue shares well above every male candidate except one (Ted Cruz). Even then, Cruz’s soft-issue share remains low in absolute terms. This indicates that the pattern is consistent across individuals, not driven by a single high-profile outlier, reinforcing Hypothesis 1.
 
+At the same time, Cruz’s comparatively higher soft share among men is substantively interesting. Inspection of his soft headlines (shown below) suggests that his soft classification is driven primarily by emotional conflict rhetoric, religious or family appeals, and viral confrontations, rather than by lifestyle or appearance-focused coverage. In this sense, his “soft” framing reflects culture-war and affective polarization narratives, whereas women’s soft coverage is more often tied to family, education, and health policy. This nuance is consistent with theories that gender interacts with ideology and media polarization to shape how politicians are framed, not just how often they are associated with soft or hard issues.
 
 ### 4.4 Finding 3: Most Soft-Issue Headlines in the Entire Dataset Feature Women
 
@@ -267,6 +283,34 @@ ggplot(soft_only,
 
 **Interpretation:**
 When restricting attention to soft-issue stories only, 86.9% of these headlines mention female candidates. Male candidates account for just 13.1% of soft-frame stories, despite receiving more total coverage overall. This supports the idea that soft-issue framing is not only more common for women (Finding 1), but when soft framing occurs, it overwhelmingly features female politicians. This strengthens the descriptive evidence for Hypothesis 1 and complements the individual-level patterns shown in Finding 2.
+
+### 4.5 Illustrative Headline Examples
+
+To make the patterns less abstract, this subsection presents concrete examples of soft-issue headlines for one female and one male candidate.
+
+```{r}
+# Example soft headlines for Kirsten Gillibrand
+
+gillibrand_soft <- scored %>%
+filter(candidate == "Kirsten Gillibrand",
+soft_hits > hard_hits) %>%
+select(title) %>%
+slice_head(n = 3)
+
+# Example soft headlines for Ted Cruz
+
+cruz_soft <- scored %>%
+filter(candidate == "Ted Cruz",
+soft_hits > hard_hits) %>%
+select(title) %>%
+slice_head(n = 3)
+
+gillibrand_soft
+cruz_soft
+
+```
+
+These examples help clarify what “soft” framing looks like in practice. Gillibrand’s soft headlines typically highlight family, health, or education policy and occasionally personal biographical elements. By contrast, Cruz’s soft headlines are more likely to emphasize emotionally charged rhetoric, conflicts with political opponents, or religious/family symbolism. In other words, both candidates receive soft coverage, but the content of that softness is gendered: women are tied to caregiving and social welfare, while men are tied to affective conflict and culture-war themes.
 
 
 ## 7. Conclusions
@@ -332,4 +376,72 @@ Importantly, the persistence of this gap under a more neutral and arguably less 
 
 In sum, the robustness check confirms that the main takeaway of the study—that female candidates are consistently more likely to be framed in soft-issue terms—holds across alternative analytical specifications.
 
+## Appendix B. Robustness Check: Sensitivity to Keyword Choice
 
+A second robustness check evaluates whether the gender gap is sensitive to the specific keyword dictionaries used to define soft and hard issues. If the results change dramatically when we slightly narrow or expand the soft dictionary, that would suggest the findings depend heavily on arbitrary keyword choices.
+
+Two alternative soft-issue dictionaries were tested:
+
+### B1. Dropped Broad Soft Terms
+
+This version focuses on core social-welfare, education, and health terms and removes a subset of more general or potentially noisy soft words.
+
+```{r}
+## Appendix B. Robustness Check: Sensitivity to Keyword Choice
+
+# Alternative dictionaries
+soft_terms_drop <- c(
+  "education", "school", "schools", "teacher", "teachers",
+  "childcare", "children", "families", "family",
+  "health", "healthcare", "medicaid", "medicare"
+)
+
+soft_terms_expand <- c(
+  soft_terms,
+  "parent", "parents", "mother", "father", "mom", "dad",
+  "care", "caregiving"
+)
+
+# Recalculate hits for alternative dictionaries
+scored_kw_robust <- stories %>%
+  mutate(
+    title_clean = normalize_text(title),
+    soft_drop_hits   = count_hits(title_clean, soft_terms_drop),
+    soft_expand_hits = count_hits(title_clean, soft_terms_expand),
+    hard_hits        = count_hits(title_clean, hard_terms),
+    soft_drop_ind    = ifelse(soft_drop_hits > hard_hits, 1, 0),
+    soft_expand_ind  = ifelse(soft_expand_hits > hard_hits, 1, 0)
+  )
+
+# 1) Main dictionary summary (uses `scored`, where soft_hits exists)
+main_summary <- scored %>%
+  mutate(soft_main_ind = soft_hits > hard_hits) %>%
+  group_by(gender) %>%
+  summarise(
+    soft_main_pct = mean(soft_main_ind),
+    .groups = "drop"
+  )
+
+# 2) Alternative dictionaries summary (uses `scored_kw_robust`)
+alt_summary <- scored_kw_robust %>%
+  group_by(gender) %>%
+  summarise(
+    soft_drop_pct   = mean(soft_drop_ind),
+    soft_expand_pct = mean(soft_expand_ind),
+    .groups = "drop"
+  )
+
+# 3) Combine into a single table
+kw_summary <- main_summary %>%
+  left_join(alt_summary, by = "gender")
+
+kw_summary
+
+
+```
+
+**Interpretation**
+
+Across both alternative dictionaries, the gender gap in soft-issue framing persists. Narrowing the soft dictionary lowers the overall prevalence of soft coverage for both genders, while expanding it raises the prevalence for both; however, in each specification, female candidates continue to receive substantially higher shares of soft-issue headlines than male candidates. The direction and relative size of the gender gap remain stable.
+
+This robustness check indicates that the main findings are not driven by a particular keyword list. Instead, they reflect a consistent pattern across reasonable alternative choices about how to operationalize soft-issue coverage, strengthening the credibility of the conclusion that media outlets systematically link women more than men to soft policy domains in the 2024 online news environment.
