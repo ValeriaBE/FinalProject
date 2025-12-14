@@ -107,6 +107,8 @@ The goal of the analysis is to compare the prevalence of “soft” versus “ha
 
 No regression models were required for the core findings because the patterns of interest relate directly to differences in proportions across clearly defined groups; however, regression extensions are included in the discussion as possible next steps.
 
+Because the analysis focuses on descriptive differences in proportions rather than causal estimation, formal hypothesis tests and p-value thresholds are not emphasized. Instead, uncertainty is shown through relative magnitudes, consistency across candidates, and robustness to alternative classification rules.
+
 All findings are supported by robustness checks examining alternative classification rules and keyword dictionaries, presented in the appendix.
 
 ### 4.2 Finding 1: Female Candidates Receive a Higher Share of Soft-Issue Headlines
@@ -331,6 +333,8 @@ At the same time, the analysis is subject to several limitations. The data consi
 Future research could extend this work by incorporating full article text, analyzing larger pools of candidates across multiple electoral cycles, or applying more advanced NLP approaches such as transformer-based models that capture semantic context. Integrating outlet-level ideological data would also help determine whether partisan information environments amplify or dampen gendered framing patterns. Expanding the scope to include broadcast or social media coverage could further illuminate where and how gender differences emerge across platforms.
 
 In sum, this study provides descriptive but meaningful evidence that gender continues to shape political issue framing in U.S. online news. While the findings cannot establish causality or broad generalization, they indicate that gendered associations remain embedded in contemporary media narratives—and invite deeper investigation into how these patterns influence public opinion, representation, and the dynamics of modern electoral politics.
+
+For political analytics specifically, these findings demonstrate how scalable text-based methods can be used to detect systematic representational biases in high-volume media environments, offering tools for campaigns, researchers, and journalists to audit information ecosystems in real time.
 
 
 ## Appendix A. Robustness Check: Neutral Classification for Tied Headlines
