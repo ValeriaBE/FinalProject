@@ -41,7 +41,7 @@ More recent work examining digital media suggests that gendered framing persists
 
 Nevertheless, several limitations remain in the existing literature. Much of the foundational research focuses on earlier election cycles or on a small set of high-profile candidates, leaving open questions about how gendered patterns operate in the contemporary, high-volume online news environment. Few studies examine broad samples of candidates across parties and regions using systematic, reproducible NLP methods applied directly to digital news content. We also know relatively little about whether gender associations with specific policy domains remain stable in 2024.
 
-This project builds on these insights by conducting a fresh, data-driven analysis of gendered issue framing in U.S. online news headlines during the 2024 election cycle. By using a structured set of high-visibility candidates and applying transparent text classification methods to thousands of headlines, the study contributes new evidence to an ongoing scholarly conversation about how gender shapes political communication in the modern media landscape.
+This project builds on these insights by conducting a data-driven analysis of gendered issue framing in U.S. online news headlines during the 2024 election cycle. By using a structured set of high-visibility candidates and applying transparent text classification methods to thousands of headlines, the study contributes new evidence to an ongoing scholarly conversation about how gender shapes political communication in the modern media landscape.
 
 ## 3. Data Description
 
