@@ -319,7 +319,9 @@ cruz_soft
 
 ```
 
-These examples help clarify what “soft” framing looks like in practice. Gillibrand’s soft headlines typically highlight family, health, or education policy and occasionally personal biographical elements. By contrast, Cruz’s soft headlines are more likely to emphasize emotionally charged rhetoric, conflicts with political opponents, or religious/family symbolism. In other words, both candidates receive soft coverage, but the content of that softness is gendered: women are tied to caregiving and social welfare, while men are tied to affective conflict and culture-war themes.
+These headline examples help illustrate what qualifies as “soft” issue framing under the dictionary-based classification. For Kirsten Gillibrand, soft-classified headlines primarily reference healthcare expansion, children, and family-oriented policy initiatives, often emphasizing concrete policy actions related to social welfare. In contrast, Ted Cruz’s soft-classified headlines are more heterogeneous in content. While they include health-related terms such as Medicare or medical treatments, they more frequently appear in stories centered on political conflict, controversy, or personal events, rather than on caregiving or social policy leadership per se.
+
+Taken together, these examples suggest that although both male and female candidates can appear in soft-issue headlines, the substantive meaning of “softness” may differ by gender. For women, soft framing tends to align with policy domains traditionally associated with caregiving and social welfare, whereas for men, soft-classified headlines more often arise from conflict-driven or incidental uses of health- or family-related language. This distinction highlights an important limitation of dictionary-based methods: while they effectively capture differences in issue association, they may obscure qualitative differences in how those issues are framed across genders.
 
 
 ## 7. Conclusions
@@ -379,13 +381,13 @@ ggplot(soft_share_gender_rc, aes(x = gender, y = soft_pct_rc, fill = gender)) +
 
 **Interpretation**
 
-The robustness check shows that the core gender gap in soft-issue framing remains strong even after removing neutral headlines—those with equal or zero counts of soft and hard keywords. Under this alternative classification rule, female candidates still receive a substantially higher share of soft-issue coverage (approximately 70%) compared to male candidates (approximately 27%).
+The robustness check shows that the core gender gap in soft-issue framing remains strong even after removing neutral headlines. Under this alternative classification rule, female candidates still receive a substantially higher share of soft-issue coverage (approximately 70%) compared to male candidates (approximately 27%).
 
 While the absolute percentages increase for both groups, as expected when eliminating ambiguous cases, the relative difference between genders remains large and identical to the main analysis. This means the observed gender gap is not an artifact of defaulting ties to the hard category in the primary coding scheme. Instead, it reflects a genuine pattern in the underlying data: soft-issue headlines, when present, are still disproportionately attributed to women.
 
 Importantly, the persistence of this gap under a more neutral and arguably less conservative classification rule strengthens the credibility of the main findings. It suggests that the results are robust to reasonable changes in text-classification assumptions and that gendered differences in issue framing are not sensitive to this specific coding decision.
 
-In sum, the robustness check confirms that the main takeaway of the study—that female candidates are consistently more likely to be framed in soft-issue terms—holds across alternative analytical specifications.
+In sum, the robustness check confirms that the main takeaway of the study that female candidates are consistently more likely to be framed in soft-issue terms holds across alternative analytical specifications.
 
 ## Appendix B. Robustness Check: Sensitivity to Keyword Choice
 
